@@ -1,14 +1,13 @@
 // Require Modules
 const fs = require('fs');
 const inquirer = require('inquirer');  
-const { writeFile, generateMarkdown } = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // Veryify Module is successfully imported, e.g.->
     //console.log(inquirer);
 
 // Question prompts for user input   
-inquirer
-  .prompt([
+const userInput = [
     {
         type: 'input',
         name: 'title',
@@ -65,21 +64,32 @@ inquirer
             }
         }
     }
-])
-// chain user responses with a callback method
-.then(function(data) {
-    generateMarkdown(data);
-})
-.then(mdFile => {
-    return writeFile(mdFile);
-})
+];
 
-// fs.writeFile("README.md", process.argv[2], function(err) {
+const writeMD  = (responses) => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/README.md', responses, err => {
+            // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
+            if (err) {
+                reject(err);
+                // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
+                return;
+                }
+                // if everything went well, resolve the Promise and send the successful data to the `.then()` method
+                resolve({
+                ok: true,
+                message: 'README created!'
+                });
+        });
+    });
+};
 
-//     if (err) {
-//       return console.log(err);
-//     }
-  
-//     console.log("Done!");
-  
-//   });
+function init() {
+    inquirer.prompt(userInput)
+    .then((responses) => {
+        generateMarkdown();
+        writeMD();
+    })
+}
+
+init();
