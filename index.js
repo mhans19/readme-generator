@@ -23,10 +23,10 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        name: 'projDesc',
+        name: 'description',
         message: 'Please enter a description of your project.',
-        validate: projDesc => {
-            if (projDesc) {
+        validate: description => {
+            if (description) {
                 return true;
             } else {
                 console.log('Please enter a project description!');
@@ -54,10 +54,35 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        name: 'install',
+        name: 'installation',
         message: 'Please enter any installation instructions for your project.',
-        validate: projDesc => {
-            if (projDesc) {
+        validate: installation => {
+            if (installation) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Please enter any usage instructions for your project.',
+        validate: usage => {
+            if (usage) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Please select the appropriate licensing for this project.',
+        choices: ["GPL V3", "EPL 1.0", "MIT", "MPL 2.0"],
+        validate: license => {
+            if (license) {
                 return true;
             } else {
                 return false;
@@ -70,32 +95,43 @@ inquirer.prompt([
     # <div align="center">**${answers.title}**</div>  
       
     ## **PROJECT DESCRIPTION**  
-    ${answers.projDesc}  
+    ${answers.description}  
       
     ## **TABLE OF CONTENTS**  
-    [1. DESCRIPTION](#DESCRIPTION)  
+    [1. DESCRIPTION](#PROJECT-DESCRIPTION)  
     [2. TABLE OF CONTENTS](#TABLE-OF-CONTENTS)  
-    [3. INSTALLATION](#INSTALLATION)  
-    [4. USAGE](#USAGE)  
-    [5. LICENSE](#LICENSE)  
-    [6. CONTRIBUTING](#CONTRIBUTING)  
-    [7. TESTS](#TESTS)  
-    [8. QUESTIONS](#QUESTIONS)  
+    [3. DEPLOYMENT](#DEPLOYMENT)  
+    [4. INSTALLATION](#INSTALLATION)  
+    [5. USAGE](#USAGE)  
+    [6. LICENSE](#LICENSE)  
+    [7. CONTRIBUTING](#CONTRIBUTING)  
+    [8. TESTS](#TESTS)  
+    [9. QUESTIONS](#QUESTIONS)  
         
+    ## **DEPLOYMENT**  
+    | Live URL | GitHub Repository |  
+    | :------: | :------: |   
+    | [Application](${answers.liveURL}) | [Repository](${answers.repoLink}) |   
+      
     ## **INSTALLATION**  
+    ${answers.installation}  
       
     ## **USAGE**  
-      
+    ${answers.usage}  
+       
     ## **LICENSE**  
-      
+    ${answers.license}  
+       
     ## **CONTRIBUTING**  
-      
+    ${answers.contributing}  
+       
     ## **TESTS**  
-      
+    ${answers.tests}  
+       
     ## **QUESTIONS**  
     | Email | GitHub | LinkedIn |
     | :------: | :------: |  :------: |
-    | <${answers.liveURL}> | [github](${answers.repoLink}) | [LinkedIn](${answers.confirmLive}) |  
+    | <${answers.email}> | [github](${answers.github}) | [LinkedIn](${answers.linkedin}) |  
     `;
 })
 .then(pageMD => {
