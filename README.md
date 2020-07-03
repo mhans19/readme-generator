@@ -9,7 +9,7 @@
 [6. DEVELOPMENT](#DEVELOPMENT)  
 [7. INSTALLATION](#INSTALLATION)   
 [8. USAGE](#USAGE)   
-[9. TESTING](#TESTING)
+[9. TESTING](#TESTING)  
 [10. USER STORY](#USER-STORY)  
 [11. ACCEPTANCE CRITERIA](#ACCEPTANCE-CRITERIA)   
 [12. GRADING REQUIREMENTS](#GRADING-REQUIREMENTS)    
@@ -26,15 +26,15 @@
 ## **PROJECT DESCRIPTION**
 > High-quality README documentation is important when creating an open source application to detail installation requirements, usage, licensing, and other contributing elements.   
   
-> The purpose of this project was to create a command-line application that generates a README file using Markdown syntax. The application is initiated with the command-line and allow for user input using the [Inquirer Package](https://www.npmjs.com/package/inquirer). The user's input populates the README.md template.
+> The purpose of this project was to create a command-line application that generates a README file using Markdown syntax. The application is initiated with the command-line and allow for user input using the [Inquirer Package](https://www.npmjs.com/package/inquirer). The user's input populates the README template.
 
 ---
 
 ## **APPLICATION LINKS**
 > Live Application (Not relevant for this project)  
 > [GitHub Repository](https://github.com/mhans19/readme-generator)  
-> [Video Demonstration]()  
-> [Sample README Output]()  
+> [Video Demonstration](https://www.youtube.com/watch?v=yWTvnqWZeL4&feature=youtu.be)  
+> [Sample README Output](./dist/README.md)  
 
 ---
 
@@ -66,7 +66,7 @@ This application was developed with the following application structures:
 
 ## **USAGE**
 > The application must be operated with a Command Line Interface (CLI) software. Using the command line, navigate to the local repository containing the *index.js* file. Then, call upon node followed by the file name - *node index.js*.   
-[Walkthrough Demonstration]()  
+[Walkthrough Demonstration](https://www.youtube.com/watch?v=yWTvnqWZeL4&feature=youtu.be)  
 
 ---
 
@@ -127,19 +127,12 @@ This application was developed with the following application structures:
 ---
 
 ## **FUNCTIONALITY**
-1. When the application loads, the player is presented with a themed user interface, a 'Start Playing' button, and a 'Leaderboard' button.  
-![](/assets/images/home.PNG)  
-2. If the 'Leaderboard' button is clicked, a modal appears that shows the top 5 winning players. The user can close the modal to return to the home screen.  
-![](/assets/images/leaderboard-modal.PNG)  
-3. When the player clicks the 'Start Playing' button, a modal appears for the user to input a username, read game instructions, and begin the game.  
-![](/assets/images/usermodal.PNG)  
-4. If a user clicks the 'Instructions' button, a nested modal appears with game instructions. When a player is done reading the instructions, they can click the 'Back' button to return to the previous modal.  
-![](/assets/images/instructions-modal.PNG)  
-5. After a username is typed, the player can click the 'Begin Game' button to start playing. When the game begins, the user is presented with a game card of their username and starting gold on the left, and the NPC's name and starting gold on the right. In the middle of the interface, the player is presented with a text field to input their bet and a button to roll the dice when they are ready to play.  
-![](/assets/images/gamecards.PNG)  
-6. A random number generator is used to determine the roll of the player and the NPC. This rolled number will appear in the game cards. The opponent with the higher rolled number wins the round and will see the a green outline surrounding their game card and a confirmation that they won. The losing opponent will have a red outline for their game card and confirmation that they lost. The amount of gold each opponent has is then updated.  
-![](/assets/images/resultscards.PNG)  
-7. The player then places another bet and rolls the dice again. This game play continues until one of the opponents runs out of gold. The player with remaining gold wins the game and an appropriate Giphy is sent to the Death-Roll Slack channel.   
-![](/assets/images/slackresults.PNG)  
-8. When a game ends, a modal appears detailing the player's final points, number of wins, and winning streak for the game. The user's scores are saved to the local storage if they make the top 5. At the bottom of the modal, the player has the option of playing again.  
-![](/assets/images/gameresults.PNG)  
+1. From the command line interface (CLI), navigate to the local repository containing the *index.js* file.  
+![](/assets/images/local_repo.PNG)  
+2. Once in the local repository, type *node index.js* into the command line. Then press 'Enter'.  
+![](/assets/images/initiate_node.PNG)  
+3. From the command line, give a response to each of the questions prompted. Press 'Enter' to move to the next question. Once all the questions are answered, a validating message appears and instructs users that the newly generated README file is located within the 'dist' folder in the repository.  
+![](/assets/images/node_prompts.PNG)  
+4. Navigate to the created README and see that all responses given from the command line have populated into the README template.  
+![](/assets/images/readme_populated.PNG)  
+5. Your README file is ready to go!  

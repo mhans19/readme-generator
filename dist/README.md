@@ -1,9 +1,9 @@
 
-# <div align="center">**n**</div>   
-![APACHE 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)  
+# <div align="center">**README GENERATOR**</div>   
+![MIT](https://img.shields.io/badge/License-MIT-blue.svg)  
     
 ## **DESCRIPTION**   
-> n  
+> The README Generator is a useful application that makes it very simple to generate a project README, all from the command line!  
     
 ## **TABLE OF CONTENTS**  
 * [DESCRIPTION](#DESCRIPTION)  
@@ -17,25 +17,27 @@
 * [QUESTIONS](#QUESTIONS)  
     
 ## **APPLICATION LINKS**   
-> [Live Application](undefined)  
-> [GitHub Repository](undefined)  
+> [Live Application](www.cat-bounce.com)  
+> [GitHub Repository](www.github.com/mhans19)  
     
 ## **INSTALLATION**   
-n  
+First, you must clone the GitHub repo. Second, install node js and any NPM dependencies.  
     
 ## **USAGE**  
-n  
+Navigate to the local repo and call the application by typing 'node index.js'. Follow the prompts. Your responses will populate into the new README.  
     
 ## **LICENSE**  
-> This application is licensed with APACHE 2.0.
+> This application is covered under the MIT license.
     
 ## **CONTRIBUTING**  
-> n  
+> Morgan Hansen, Jane Doe, Bob Schmob.  
     
 ## **TESTS**  
-> n   
+> There were no tests... yet!   
     
 ## **QUESTIONS**  
+Please contact me for any inquiries!  
+
 | Reach Out | Repositories | Profile |  
 | :------: | :------: |  :------: |  
-| <undefined> | [GitHub](undefined) |  [LinkedIn](undefined) |   
+| <mdhansen19@gmail.com> | [GitHub](www.github.com/mhans19) |  [LinkedIn](www.linkedin.com/mhans19) |   
