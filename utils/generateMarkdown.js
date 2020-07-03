@@ -10,10 +10,9 @@ const badge = (license) =>{
         return `https://img.shields.io/badge/License-AGPLv3-blue.svg`;
     } 
 }
-
+// MARKDOWN STRUCTURE
 module.exports = templateData => {
     const { title, description, liveURL, repoLink, installation, usage, license, contributing, tests, email, github, linkedin } = templateData;
-
 return `
 # <div align="center">**${title}**</div>   
 ![${license}](${badge(license)})  
