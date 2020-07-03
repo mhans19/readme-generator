@@ -42,7 +42,7 @@
 Please contact **MORGAN HANSEN** for all application inqueries.
 | Email | GitHub | LinkedIn |  
 | :------: | :------: |  :------: |  
-| <mdhansen19@gmail.com> | [GitHub](https://github.com/mhans19?tab=repositories) |  [LinkedIn](https://www.linkedin.com/feed/?trk=onboarding-landing) |  
+| <mdhansen19@gmail.com> | [GitHub](https://github.com/mhans19?tab=repositories) |  [LinkedIn](https://www.linkedin.com/in/morgan-hansen-47235872/?challengeId=AQF6MR471a-pZgAAAXMTL5e4xLqg_LNW5yawcXgk_uUmLrzsXk5ehOnzlQuK2dOVeX4ARtJwxmcHQrQhtgL_jM96wbBzhLvmAA&submissionId=813167e8-8027-1e16-5911-1c143c23561f) |  
   
 ---
 
