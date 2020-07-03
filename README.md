@@ -1,44 +1,47 @@
 # <div align="center">**README GENERATOR**</div>
 
-## **TABLE OF CONTENTS**  
-[1. LICENSE](#LICENSE)  
-[2. PROJECT DESCRIPTION](#PROJECT-DESCRIPTION)    
-[3. TABLE OF CONTENTS](#TABLE-OF-CONTENTS)  
+## **TABLE OF CONTENTS**    
+[1. TABLE OF CONTENTS](#TABLE-OF-CONTENTS)  
+[2. LICENSE](#LICENSE)  
+[3. PROJECT DESCRIPTION](#PROJECT-DESCRIPTION)  
 [4. APPLICATION LINKS](#APPLICATION-LINKS)  
-[5. INSTALLATION](#INSTALLATION)   
-[6. USAGE](#USAGE)   
-[7. CONTRIBUTIONS](#CONTRIBUTIONS)  
-[8. DEVELOPMENT](#DEVELOPMENT)  
-[9. USER STORY](#USER-STORY)  
-[10. ACCEPTANCE CRITERIA](#ACCEPTANCE-CRITERIA)   
-[11. GRADING REQUIREMENTS](#GRADING-REQUIREMENTS)    
-[12. FUNCTIONALITY](#FUNCTIONALITY)  
+[5. CONTRIBUTIONS](#CONTRIBUTIONS)  
+[6. DEVELOPMENT](#DEVELOPMENT)  
+[7. INSTALLATION](#INSTALLATION)   
+[8. USAGE](#USAGE)   
+[9. TESTING](#TESTING)
+[10. USER STORY](#USER-STORY)  
+[11. ACCEPTANCE CRITERIA](#ACCEPTANCE-CRITERIA)   
+[12. GRADING REQUIREMENTS](#GRADING-REQUIREMENTS)    
+[13. FUNCTIONALITY](#FUNCTIONALITY)  
 
 ---
 
 ## **LICENSE**  
-  ![MIT](https://img.shields.io/badge/License-MIT-blue.svg)  
+![MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+> This application is covered under the [MIT License](https://opensource.org/licenses/MIT)    
 
 ---
 
 ## **PROJECT DESCRIPTION**
-> The purpose of this project is 
+> High-quality README documentation is important when creating an open source application to detail installation requirements, usage, licensing, and other contributing elements.   
+  
+> The purpose of this project was to create a command-line application that generates a README file using Markdown syntax. The application is initiated with the command-line and allow for user input using the [Inquirer Package](https://www.npmjs.com/package/inquirer). The user's input populates the README.md template.
 
 ---
 
 ## **APPLICATION LINKS**
-> Live Application (Not relevant for this project)
+> Live Application (Not relevant for this project)  
 > [GitHub Repository](https://github.com/mhans19/readme-generator)  
 > [Video Demonstration]()  
 > [Sample README Output]()  
 
 ---
 
-## **CONTRIBUTIONS** 
-
-| MORGAN HANSEN |  | |  
-| :------: | :------: |  :------: |   
+## **CONTRIBUTIONS**   
+Please contact **MORGAN HANSEN** for all application inqueries.
 | Email | GitHub | LinkedIn |  
+| :------: | :------: |  :------: |  
 | <mdhansen19@gmail.com> | [GitHub](https://github.com/mhans19?tab=repositories) |  [LinkedIn](https://www.linkedin.com/feed/?trk=onboarding-landing) |  
   
 ---
@@ -62,8 +65,13 @@ This application was developed with the following application structures:
 ---
 
 ## **USAGE**
-> This application must be operated with a Command Line Interface (CLI) software. Using the command line, navigate to the local repository containing the *index.js* file. Then, call upon node followed by the file name - *node index.js*.   
+> The application must be operated with a Command Line Interface (CLI) software. Using the command line, navigate to the local repository containing the *index.js* file. Then, call upon node followed by the file name - *node index.js*.   
 [Walkthrough Demonstration]()  
+
+---
+
+## **TESTING**
+> This application has not undergone testing.
 
 ---
 
@@ -77,7 +85,7 @@ This application was developed with the following application structures:
 ## **ACCEPTANCE CRITERIA**
 > GIVEN a command-line application that accepts user input  
 > WHEN I am prompted for information about my application repository  
-> THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions  
+> THEN a high-quality, professional README is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions  
 > WHEN I enter my project title  
 > THEN this is displayed as the title of the README  
 > WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions  

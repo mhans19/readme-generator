@@ -52,6 +52,8 @@ ${usage}
 > ${tests}   
     
 ## **QUESTIONS**  
+Please contact me for any inquiries!  
+
 | Reach Out | Repositories | Profile |  
 | :------: | :------: |  :------: |  
 | <${email}> | [GitHub](${github}) |  [LinkedIn](${linkedin}) |   
