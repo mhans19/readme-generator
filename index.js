@@ -1,11 +1,7 @@
 // Require Modules
-// const generatePage = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 const fs = require('fs');
 const inquirer = require('inquirer');  
-
-// Veryify Module is successfully imported, e.g.->
-    //console.log(inquirer);s
-
 // Question prompts for user input   
 inquirer.prompt([
     {
@@ -35,22 +31,30 @@ inquirer.prompt([
         }
     },
     {
-        type: 'confirm',
-        name: 'confirmLive',
-        message: 'Is your project published to a live URL?',
-        default: true
-    },
-    {
         type: 'input',
         name: 'liveURL',
         message: 'Please provide the website URL.',
-        when: ({ confirmLive }) => confirmLive
+        validate: liveURL => {
+            if (liveURL) {
+                return true;
+            } else {
+                console.log('Please enter the URL!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'repoLink',
         message: 'Please provide the link to your GitHub repository.',
-        when: ({ confirmLive }) => confirmLive
+        validate: repoLink => {
+            if (repoLink) {
+                return true;
+            } else {
+                console.log('Please enter the link to your repository!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
@@ -60,6 +64,7 @@ inquirer.prompt([
             if (installation) {
                 return true;
             } else {
+                console.log('Please enter installation instructions!');
                 return false;
             }
         }
@@ -72,6 +77,7 @@ inquirer.prompt([
             if (usage) {
                 return true;
             } else {
+                console.log('Please enter usage instructions!');
                 return false;
             }
         }
@@ -80,69 +86,91 @@ inquirer.prompt([
         type: 'list',
         name: 'license',
         message: 'Please select the appropriate licensing for this project.',
-        choices: ["GPL V3", "EPL 1.0", "MIT", "MPL 2.0"],
-        validate: license => {
-            if (license) {
+        choices: ["MIT", "APACHE 2.0", "GPL 3.0", "AGPL 3.0"],
+        validate: usage => {
+            if (usage) {
+                return true; 
+            } else {
+                console.log('Select "None" if license is not appropriate.');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'Please list collaborators (with links to GitHub repositories), third-party assets, or links to tutorials.',
+        validate: usage => {
+            if (usage) {
                 return true;
             } else {
+                console.log('Please list contributing factors!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Please list any tests for your application.',
+        validate: usage => {
+            if (usage) {
+                return true;
+            } else {
+                console.log('Please list tests!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Please provide your email address.',
+        validate: email => {
+            if (email) {
+                return true;
+            } else {
+                console.log('Please enter your email!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Please provide the link to your GitHub.',
+        validate: github => {
+            if (github) {
+                return true;
+            } else {
+                console.log('Please enter your GitHub link!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'linkedin',
+        message: 'Please provide the link to your LinkedIn.',
+        validate: linkedin => {
+            if (linkedin) {
+                return true;
+            } else {
+                console.log('Please enter your LinkedIn link!');
                 return false;
             }
         }
     }
 ])
 .then(answers => {
-    return `
-    # <div align="center">**${answers.title}**</div>  
-      
-    ## **PROJECT DESCRIPTION**  
-    ${answers.description}  
-      
-    ## **TABLE OF CONTENTS**  
-    [1. DESCRIPTION](#PROJECT-DESCRIPTION)  
-    [2. TABLE OF CONTENTS](#TABLE-OF-CONTENTS)  
-    [3. DEPLOYMENT](#DEPLOYMENT)  
-    [4. INSTALLATION](#INSTALLATION)  
-    [5. USAGE](#USAGE)  
-    [6. LICENSE](#LICENSE)  
-    [7. CONTRIBUTING](#CONTRIBUTING)  
-    [8. TESTS](#TESTS)  
-    [9. QUESTIONS](#QUESTIONS)  
-        
-    ## **DEPLOYMENT**  
-    | Live URL | GitHub Repository |  
-    | :------: | :------: |   
-    | [Application](${answers.liveURL}) | [Repository](${answers.repoLink}) |   
-      
-    ## **INSTALLATION**  
-    ${answers.installation}  
-      
-    ## **USAGE**  
-    ${answers.usage}  
-       
-    ## **LICENSE**  
-    ${answers.license}  
-       
-    ## **CONTRIBUTING**  
-    ${answers.contributing}  
-       
-    ## **TESTS**  
-    ${answers.tests}  
-       
-    ## **QUESTIONS**  
-    | Email | GitHub | LinkedIn |
-    | :------: | :------: |  :------: |
-    | <${answers.email}> | [github](${answers.github}) | [LinkedIn](${answers.linkedin}) |  
-    `;
+    return generateMarkdown(answers);
 })
 .then(pageMD => {
     fs.writeFile('./dist/README.md', pageMD, err => {
-        // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
         if (err) {
             console.log(err);
-            // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
             return;
             }
-            // if everything went well, resolve the Promise and send the successful data to the `.then()` method
             console.log("Your README file was created! Navigate to the 'dist' folder to locate.")
     });
 });
